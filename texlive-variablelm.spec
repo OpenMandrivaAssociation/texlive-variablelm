@@ -1,6 +1,6 @@
 Name:		texlive-variablelm
 Version:	60014
-Release:	1
+Release:	2
 Summary:	Font definitions for the variable Latin Modern fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/variablelm
