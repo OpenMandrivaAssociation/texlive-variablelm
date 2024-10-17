@@ -3,7 +3,7 @@ Version:	60014
 Release:	2
 Summary:	Font definitions for the variable Latin Modern fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/variablelm
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/variablelm
 License:	gfl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.doc.r%{version}.tar.xz
