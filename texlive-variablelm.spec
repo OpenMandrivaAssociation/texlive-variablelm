@@ -1,38 +1,23 @@
-Name:		texlive-variablelm
-Version:	60014
-Release:	2
+%global tl_name variablelm
+%global tl_revision 60014
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2
+Release:	%{tl_revision}.1
 Summary:	Font definitions for the variable Latin Modern fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/variablelm
+URL:		https://www.ctan.org/tex-archive/fonts/variablelm
 License:	gfl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/variablelm.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a mechanism for scaling a typeface. It is
-directed at the Latin Modern fonts and provides the font
-definitions and the corresponding style file. This mechanism is
-useful in mixed text compositions, for example Japanese-Latin.
+This package provides a mechanism for scaling a typeface. It is directed
+at the Latin Modern fonts and provides the font definitions and the
+corresponding style file. This mechanism is useful in mixed text
+compositions, for example Japanese-Latin.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/variablelm
-%doc %{_texmfdistdir}/doc/fonts/variablelm
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
